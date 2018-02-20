@@ -41,6 +41,7 @@ class App extends Component {
     });
   }
   removeUser(username){
+    // because React elements are immutable, a const must be declared from the state element
     const { users } = this.state;
     // this sets the index at what item was clicked
     const index = users.indexOf(username);
