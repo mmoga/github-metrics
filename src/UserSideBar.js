@@ -1,39 +1,8 @@
 import React, { Component } from 'react';
+import UserList from './UserList';
 import './UserSideBar.css';
 
-class UserItem extends Component {
-    render(){
-        const {user, selectedUser, onSelect, removeUser } = this.props;
-        const classes = selectedUser === user ? 
-                            'UserSideBar--list-item active' : 
-                            'UserSideBar--list-item';
-        return (<li className={classes}>
-                    <button onClick={() => onSelect(user)}>
-                        {user}
-                    </button>
-                    <span onClick={() => removeUser(user)}>
-                        X
-                    </span>
-                </li>);
-    }
-}
-class UserList extends Component {
-    render(){
-        const { users, selectedUser, onSelect, removeUser } = this.props;
-        const Users = users.map((user, index) => <UserItem 
-                                                        key={index}
-                                                        user={user}
-                                                        onSelect={onSelect}
-                                                        selectedUser={selectedUser}
-                                                        removeUser={removeUser}
-                                                        />)
-        return (
-            <ul className='UserSideBar--list'>
-                {Users}
-            </ul>
-        );
-    }
-}
+
 class UserSideBar extends Component {
     render(){
         const { users, selectedUser, onSelect, removeUser } = this.props;
