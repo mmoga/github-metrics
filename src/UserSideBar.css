@@ -38,6 +38,10 @@
     cursor: pointer; 
 }
 
+.UserSideBar--list-item span {
+    cursor: pointer;
+}
+
 .UserSideBar--user-form {
     width: 100%;
     margin: 0;

@@ -42,6 +42,21 @@ class App extends Component {
   }
   removeUser(username){
     const { users } = this.state;
+    // this sets the index at what item was clicked
+    const index = users.indexOf(username);
+    // this sets aside every item leading up to the selected item
+    const first = users.slice(0, index);
+    // this sets aside every item after the selected item
+    const last = users.slice(index + 1);
+    // this combines the two set aside portions
+    const newUsers = [
+      ...first,
+      ...last
+    ];
+    // this changes the state of the original users
+    this.setState({
+      users: newUsers
+    });
     //finish the remove user portion
   }
   selectUser(user){
