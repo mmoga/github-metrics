@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const UserItem = props => {
         const {user, selectedUser, onSelect, removeUser } = props;
@@ -13,6 +14,13 @@ const UserItem = props => {
                         X
                     </span>
                 </li>);
+    }
+
+    UserItem.propTypes = {
+        user: PropTypes.string.isRequired,
+        selectedUser: PropTypes.string.isRequired,
+        onSelect: PropTypes.func.isRequired,
+        removeUser: PropTypes.func.isRequired
     }
 
 export default UserItem;
